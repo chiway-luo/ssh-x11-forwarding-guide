@@ -86,10 +86,30 @@ ssh -Y USER@VM_IP
 
 仅需勾选
 ✅ Disable access control
+## 6) 配置环境变量DISPLAY
+验证当前终端,当前用户,当前机器
+```
+echo $env:DISPLAY
+[Environment]::GetEnvironmentVariable("DISPLAY","User")
+[Environment]::GetEnvironmentVariable("DISPLAY","Machine")
+```
+如果没有值,使用下列命令为当前终端设置
+```
+$env:DISPLAY="127.0.0.1:0.0"
+```
+（有的人用 localhost:0.0 也行，127.0.0.1 更稳。）
+
+如果你希望以后每次打开 PowerShell 都自动有 DISPLAY，可以再加一条（永久写入用户环境变量）,新建终端生效：
+```
+setx DISPLAY "127.0.0.1:0.0"
+```
 
 ## 6）验证：让虚拟机弹窗出现在 Windows 桌面
-
-确保你现在是 ssh -Y 连接进去的虚拟机终端，然后执行：
+新建一个终端
+```
+ssh -Y USER@VM_IP
+```
+确保你现在是 ssh -Y 连接进去的虚拟机终端(启动xlaunch后连接)，然后执行：
 ```
 echo $DISPLAY
 xclock
