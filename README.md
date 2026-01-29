@@ -104,7 +104,7 @@ $env:DISPLAY="127.0.0.1:0.0"
 setx DISPLAY "127.0.0.1:0.0"
 ```
 
-## 6）验证：让虚拟机弹窗出现在 Windows 桌面
+## 7）验证：让虚拟机弹窗出现在 Windows 桌面
 新建一个终端
 ```
 ssh -Y USER@VM_IP
@@ -114,7 +114,7 @@ ssh -Y USER@VM_IP
 echo $DISPLAY
 xclock
 ```
-## 7）编写 SSH 配置，便于无参数登录(ssh vm_ip)
+## 8）编写 SSH 配置，便于无参数登录(ssh vm_ip)
 - 在 Windows 创建/编辑：
 ```
 C:\Users\<你>\.ssh\config
@@ -133,7 +133,7 @@ Host vm_ip
 ssh vm_ip
 ```
 
-## 8) 实现弹窗始终出现在顶端(不会随着点击而下沉)
+## 9) 实现弹窗始终出现在顶端(不会随着点击而下沉)
 - 安装autohotkey v2 自动执行脚本
 
   [autohotkey v2](https://www.autohotkey.com/)
@@ -165,7 +165,7 @@ PinXWin() {
 
 ```
 
-## 9) 实现开机自启
+## 10) 实现开机自启
 - win + R 打开运行
 ```
 shell:startup
